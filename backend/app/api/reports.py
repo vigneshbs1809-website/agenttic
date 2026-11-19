@@ -243,3 +243,4 @@ def delete_report(
     db.delete(report)
     db.commit()
     return {"status": "success", "message": f"Report '{report.report_title}' deleted successfully", "id": report_id}
+

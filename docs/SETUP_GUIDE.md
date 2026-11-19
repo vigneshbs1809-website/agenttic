@@ -171,3 +171,4 @@ RAM Utilization: Safe within 8 GB envelope
 | `FastAPI port 8000 in use` | Another process is bound to port 8000 | Terminate the process or launch with `--port 8001` and update `.env`. |
 | `PyMuPDF build error on pip install` | Outdated pip | Run `python -m pip install --upgrade pip` and retry `pip install pymupdf`. |
 | `CORS Error in Browser` | Frontend running on non-standard port | Verify `CORS_ORIGINS` in `.env` includes your frontend origin. |
+

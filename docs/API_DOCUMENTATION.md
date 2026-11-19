@@ -256,3 +256,4 @@ Returns real-time status of SQLite, ChromaDB, PDF Storage, RAM utilization, and 
 
 ### `POST /system/diagnostics`
 Runs an itemized 7-point diagnostic sweep across host RAM, database connectivity, vector storage, and model endpoints.
+

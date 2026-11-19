@@ -11,6 +11,10 @@
 *.cert
 *.crt
 secrets.json
+*.zip
+Literature-Intelligence-Platform-GitHub/
+Literature-Intelligence-Platform-Production/
+Literature-Intelligence-Platform-Vercel/
 
 # --- Python & Virtual Environments ---
 venv/

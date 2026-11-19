@@ -1,0 +1,12 @@
+{
+  "name": "literature-intelligence-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-First Academic Literature Intelligence Platform",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "uvicorn main:app --reload"
+  }
+}
+

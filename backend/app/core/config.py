@@ -27,12 +27,12 @@ class Settings(BaseSettings):
     OLLAMA_TIMEOUT_SECONDS: float = 90.0
     OLLAMA_KEEP_ALIVE: str = "5m"  # Unload from RAM when idle
 
-    # Storage Paths
-    SQLITE_DB_PATH: str = str(BASE_DIR / "data" / "literature.db")
-    CHROMA_PERSIST_DIR: str = str(BASE_DIR / "data" / "chroma")
-    UPLOAD_DIR: str = str(BASE_DIR / "data" / "PDFs")
-    PDF_STORAGE_DIR: str = str(BASE_DIR / "data" / "PDFs")
-    EXTRACTED_STORAGE_DIR: str = str(BASE_DIR / "data" / "extracted")
+    # Storage Paths (automatic /tmp routing for serverless deployments such as Vercel)
+    SQLITE_DB_PATH: str = "/tmp/literature.db" if os.environ.get("VERCEL") else str(BASE_DIR / "data" / "literature.db")
+    CHROMA_PERSIST_DIR: str = "/tmp/chroma" if os.environ.get("VERCEL") else str(BASE_DIR / "data" / "chroma")
+    UPLOAD_DIR: str = "/tmp/PDFs" if os.environ.get("VERCEL") else str(BASE_DIR / "data" / "PDFs")
+    PDF_STORAGE_DIR: str = "/tmp/PDFs" if os.environ.get("VERCEL") else str(BASE_DIR / "data" / "PDFs")
+    EXTRACTED_STORAGE_DIR: str = "/tmp/extracted" if os.environ.get("VERCEL") else str(BASE_DIR / "data" / "extracted")
 
     # Document Ingestion Settings
     MAX_UPLOAD_SIZE_MB: int = 50
